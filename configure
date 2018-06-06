@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+DIR=$(dirname "$(readlink -f "$0")")
+
+function build_libssh2 {
+    if [ ! -f /usr/local/lib/libssh2.a ]; then
+        cd $DIR/3rdparty/libssh2
+        rm -fR ./bin || true
+        mkdir bin
+        cd bin
+        cmake -DCRYPTO_BACKEND=OpenSSL -DENABLE_ZLIB_COMPRESSION=ON ..
+        cmake --build .
+        sudo make install
+    fi
+}
+
+build_libssh2
