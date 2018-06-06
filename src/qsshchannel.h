@@ -7,21 +7,21 @@
 #include <QIODevice>
 
 class QSshClient;
-class QxtSshChannelPrivate;
-class QxtSshChannel  : public QIODevice {
+class QSshChannelPrivate;
+class QSshChannel  : public QIODevice {
     Q_OBJECT
 public:
-    virtual ~QxtSshChannel();
+    virtual ~QSshChannel();
 
     void close();
 protected:
-    QxtSshChannel(QSshClient*);
+    QSshChannel(QSshClient*);
     virtual qint64 readData(char*, qint64);
     virtual qint64 writeData(const char*, qint64);
     virtual bool isSequential () const;
 
-    QxtSshChannelPrivate * d;
-    friend class QxtSshChannelPrivate;
+    QSshChannelPrivate * d;
+    friend class QSshChannelPrivate;
     friend class QxtSshClientPrivate;
 signals:
     void connected();

@@ -49,7 +49,7 @@ public:
     int d_sleepInterval;
     bool d_useSystemClient;
 
-    QList<QxtSshChannel*> d_channels;
+    QList<QSshChannel*> d_channels;
 public slots:
     void d_readyRead();
     void d_connected();
