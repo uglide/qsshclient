@@ -294,25 +294,6 @@ QString   QSshClient::hostName() const{
 }
 
 /*!
- * Opens a new SSH channel that can invoke a process or SSH subsystem on the SSH server.
- * The process's stdin, stdout, and stderr are piped through the channel.
- *
- * Returns NULL if an error occurs while opening the channel, such as not being connected to an SSH server.
- *
- * \sa QSshProcess
- */
-QSshProcess * QSshClient::openProcessChannel(){
-    if(d->d_state!=6){
-        qWarning("cannot open channel before connected()");
-        return NULL;
-    }
-    QSshProcess * s=new QSshProcess(this);
-    d->d_channels.append(s);
-    connect(s,SIGNAL(destroyed()),d,SLOT(d_channelDestroyed()));
-    return s;
-}
-
-/*!
  * Opens a new SSH channel and attempts to establish a TCP connection from the SSH server
  * to a remote host. Traffic on this TCP connection is tunneled through the channel.
  *

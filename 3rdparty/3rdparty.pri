@@ -7,7 +7,7 @@ win32-msvc* {
     }
 
     INCLUDEPATH += $$PWD/libssh2/include
-    LIBSSH_LIB_PATH = $$PWD/libssh2/build
+    LIBSSH_LIB_PATH = $$PWD/libssh2/build/src/release
 
     defined(OPENSSL_STATIC) {
       OPENSSL_LIB_PATH = C:\OpenSSL-Win32\lib\VC\static

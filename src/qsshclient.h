@@ -68,7 +68,7 @@ signals:
 private:
     QSshClientPrivate * d;
     friend class QSshClientPrivate;
-    friend class QxtSshChannelPrivate;
+    friend class QSshChannelPrivate;
 };
 
 inline QString getSshErrorString(QSshClient::Error error)

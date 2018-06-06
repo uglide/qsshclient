@@ -22,7 +22,7 @@ protected:
 
     QSshChannelPrivate * d;
     friend class QSshChannelPrivate;
-    friend class QxtSshClientPrivate;
+    friend class QSshClientPrivate;
 signals:
     void connected();
 };
