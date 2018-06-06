@@ -55,7 +55,7 @@ public:
     bool addKnownHost(const QString & hostname,const QSshKey & key);
 
     QSshKey hostKey() const;
-    QString   hostName() const;
+    QString hostName() const;
 
     QSshTcpSocket * openTcpSocket(const QString & hostName,quint16 port);
 

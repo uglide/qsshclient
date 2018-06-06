@@ -10,8 +10,8 @@
 
 class QSshChannelPrivate : public QObject{
 public:
-    QSshChannelPrivate(QxtSshChannel*,QSshClient *);
-    QxtSshChannel * p;
+    QSshChannelPrivate(QSshChannel*,QSshClient *);
+    QSshChannel * p;
     QSshClient * d_client;
     LIBSSH2_CHANNEL * d_channel;
     LIBSSH2_SESSION * d_session;
