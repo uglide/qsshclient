@@ -1,3 +1,5 @@
+INCLUDEPATH += $$PWD/libssh2/include
+
 win32-msvc* {
     win32-msvc2015 {
         message("msvc2015 detected")
@@ -5,8 +7,7 @@ win32-msvc* {
     } else {
         error("Your msvc version is not suppoted. qredisclient requires msvc2015")
     }
-
-    INCLUDEPATH += $$PWD/libssh2/include
+    
     LIBSSH_LIB_PATH = $$PWD/libssh2/build/src/release
 
     defined(OPENSSL_STATIC) {
