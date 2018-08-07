@@ -10,7 +10,6 @@ function build_libssh2 {
         cd bin
         cmake -DCRYPTO_BACKEND=OpenSSL -DENABLE_ZLIB_COMPRESSION=ON ..
         cmake --build .
-        sudo make install
     fi
 }
 
