@@ -7,7 +7,7 @@ win32-msvc* {
     } else {
         error("Your msvc version is not suppoted. qredisclient requires msvc2015")
     }
-    
+
     LIBSSH_LIB_PATH = $$PWD/libssh2/build/src/release
 
     defined(OPENSSL_STATIC) {
@@ -19,13 +19,13 @@ win32-msvc* {
     LIBS += -L$$LIBSSH_LIB_PATH -L$$OPENSSL_LIB_PATH -llibssh2 -llibeay32MD -lgdi32 -lws2_32 -lkernel32 -luser32 -lshell32 -luuid -lole32 -ladvapi32
 } else {
 
-   exists( /usr/local/lib64/libssh2.a ) {    
-      LIBS += /usr/local/lib64/libssh2.a
+   exists( $$PWD/libssh2/bin/src/libssh2.a ) {
+      LIBS += $$PWD/libssh2/bin/src/libssh2.a
    } else {
-      LIBS += /usr/local/lib/libssh2.a
+      LIBS += -lssh2
    }
 
-   LIBS += -lz -lssl -lcrypto 
+   LIBS += -lz -lssl -lcrypto
 
    unix:mac {
       INCLUDEPATH += /usr/local/opt/openssl/include
